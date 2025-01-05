@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Contact App</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+
+        #contact-list {
+            margin-top: 20px;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+
+        .contact h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #2e7d32;
+        }
+
+        .contact p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media (max-width: 480px) {
+            .contact h2 {
+                font-size: 16px;
+            }
+
+            .contact p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Family Contact List</h1>
+        <div id="contact-list">
+            <!-- Contacts will be rendered here -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Code
+        const contacts = [
+            { name: "Avinash Aghav", number: "9422930869" },
+            { name: "Dipali Aghav", number: "8830123948" },
+            { name: "Pradeep Aghav", number: "9420029017 / 7020591287" },
+            { name: "Dattatrya Aghav", number: "9422244104" },
+            { name: "Shailaja Aghav", number: "9527269111" },
+            { name: "Subhash Aghav", number: "94030 45873" },
+            { name: "Brijesh Aghav", number: "8698488688" },
+            { name: "Archana Aghav", number: "9435802192" },
+            { name: "Rajani Aghav", number: "8263820024" },
+            { name: "Pravin Dhakne", number: "9881166457" },
+            { name: "Sarjerao Nagre", number: "8721087580" },
+            { name: "Sakshi Aghav", number: "8855920903" },
+            { name: "Mohini Aghav", number: "9850135878" },
+            { name: "Suraj Aghav", number: "8308500492" },
+            { name: "Ashwini Aghav", number: "9623898704" },
+            { name: "Madhuri Aghav", number: "7020173192" },
+            { name: "Rohini Aghav", number: "7745002612" },
+            { name: "Rudhir Aghav", number: "8669437070" }
+        ];
+
+        function renderContacts() {
+            const contactList = document.getElementById('contact-list');
+            contacts.forEach(contact => {
+                const contactDiv = document.createElement('div');
+                contactDiv.classList.add('contact');
+                contactDiv.innerHTML = `
+                    <h2>${contact.name}</h2>
+                    <p>${contact.number}</p>
+                `;
+                contactList.appendChild(contactDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderContacts);
+    </script>
+</body>
+</html>
